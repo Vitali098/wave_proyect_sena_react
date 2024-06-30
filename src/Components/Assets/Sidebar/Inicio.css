@@ -1,0 +1,220 @@
+body {
+  background-image: url('./img/todo.jpg');
+  background-size: cover; 
+  background-position: center; 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #6c63ff;
+  animation: slideInFromTop 1s ease-in-out; 
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-50px); 
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); 
+    opacity: 1;
+  }
+}
+
+.posts-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  animation: fadeIn 1.5s ease-in-out; 
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9); 
+  border: 1px solid #6c63ff; 
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  position: relative; 
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); 
+  transition: box-shadow 0.3s ease, background-color 0.3s ease; 
+  animation: fadeIn 2s ease-in-out; 
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease; 
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05); 
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+  pointer-events: none; 
+}
+
+.card:hover .card-overlay {
+  opacity: 1; 
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title h5 {
+  margin-bottom: 10px;
+  font-size: 1.3rem; 
+  color: #333;
+  transition: color 0.3s ease; 
+}
+
+.card-title h5:hover {
+  color: #6c63ff; 
+}
+
+.card-text {
+  color: #666;
+  line-height: 1.6;
+}
+
+.card-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 0.3s ease; 
+}
+
+.card-actions .btn {
+  color: #6c63ff; 
+  border-color: #6c63ff; 
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-actions .btn:hover {
+  color: #ffffff;
+  background-color: #6c63ff; 
+  border-color: #6c63ff;
+  transform: translateY(-3px); 
+}
+
+.bi {
+  vertical-align: text-bottom;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease; 
+}
+
+.bi:hover {
+  transform: scale(1.2);
+}
+
+.comment-form {
+  margin-top: 20px;
+  background-color: blue;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  opacity: 0.7;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.comment-form textarea {
+  width: calc(100% - 70px); 
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  margin-bottom: 10px; 
+}
+
+.comment-form textarea:focus {
+  outline: none; 
+  border-color: #6c63ff; 
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6c63ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.comment-form button:hover {
+  background-color: #564fb9; 
+  transform: translateY(-2px); 
+}
+
+@media (max-width: 768px) {
+  .posts-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+.profile-list {
+  display: flex;
+  overflow-x: auto; 
+  margin-bottom: 30px; 
+  padding-bottom: 10px; 
+  animation: fadeIn 1.5s ease-in-out; 
+}
+
+.profile-item {
+  text-align: center;
+  margin-right: 40px; 
+}
+
+.profile-item img {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #6c63ff;
+  transition: transform 0.3s ease; 
+}
+
+.profile-item img:hover {
+  transform: scale(1.1);
+}
+
+.profile-item p {
+  margin: 5px 0 0;
+  font-size: 0.8rem; 
+  color: #666; 
+}

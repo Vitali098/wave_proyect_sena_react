@@ -1,0 +1,150 @@
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+
+.App {
+  display: flex;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  transition: width 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: -1px;
+  overflow: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+.nav-text {
+  margin-left: 10px;
+}
+
+.nav-text.hidden {
+  display: none;
+}
+
+.dark-mode {
+  background-color: #111;
+}
+
+.sidebar-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.dark-mode-toggle {
+  cursor: pointer;
+  padding: 20px;
+}
+
+.login-container,
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+form h2 {
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  border: none; 
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border: none; 
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212; 
+  color: #ffffff; 
+  background-image: url('./Components/Assets/Sidebar/img/oscuro.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+.App.dark-mode {
+  background-color: transparent; 
+  color: #ffffff; 
+}
+
