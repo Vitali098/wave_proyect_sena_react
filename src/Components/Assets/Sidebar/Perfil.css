@@ -3,9 +3,12 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+<<<<<<< HEAD
   background-color: #121212;
   color: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+=======
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 }
 
 .perfil-header {
@@ -14,6 +17,7 @@
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .perfil-image {
   position: relative;
   width: 120px;
@@ -31,6 +35,14 @@
 
 .perfil-image:hover {
   transform: scale(1.05);
+=======
+.perfil-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #8e44ad;
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 }
 
 .perfil-info {
@@ -40,10 +52,15 @@
 .perfil-info h2 {
   margin-bottom: 10px;
   font-size: 24px;
+<<<<<<< HEAD
+=======
+  color: #333;
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 }
 
 .perfil-info p {
   margin-bottom: 10px;
+<<<<<<< HEAD
   font-size: 16px;
 }
 
@@ -54,10 +71,17 @@
 }
 
 .perfil-datos ul {
+=======
+  color: #666;
+}
+
+.perfil-info ul {
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
   list-style-type: none;
   padding: 0;
 }
 
+<<<<<<< HEAD
 .perfil-datos ul li {
   margin-bottom: 5px;
 }
@@ -66,6 +90,18 @@
   width: 120px;
   display: inline-block;
   font-weight: bold;
+=======
+.perfil-info ul li {
+  margin-bottom: 5px;
+  color: #888;
+}
+
+.perfil-info ul li strong {
+  font-weight: bold;
+  color: #333;
+  display: inline-block;
+  width: 100px;
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 }
 
 .perfil-publicaciones {
@@ -74,6 +110,10 @@
 
 .perfil-publicaciones h3 {
   font-size: 20px;
+<<<<<<< HEAD
+=======
+  color: #333;
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
   margin-bottom: 20px;
 }
 
@@ -84,6 +124,7 @@
 }
 
 .card {
+<<<<<<< HEAD
   background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
@@ -93,6 +134,17 @@
 
 .card:hover {
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+=======
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 }
 
 .card-img-top {
@@ -141,3 +193,8 @@
 .btn-outline-purple:hover {
   color: #6c3483;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91

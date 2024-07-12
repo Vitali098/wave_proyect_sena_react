@@ -1,12 +1,23 @@
+<<<<<<< HEAD
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineSearch, AiOutlineFileAdd, AiOutlineMessage, AiOutlineUser, AiOutlineSetting } from 'react-icons/ai';
+=======
+// Sidebar.jsx
+import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AiOutlineHome, AiOutlineSearch, AiOutlineFileAdd, AiOutlineMessage, AiOutlineUser, AiOutlineSetting } from 'react-icons/ai';
+import { BsDroplet } from 'react-icons/bs';
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { DarkModeContext } from './DarkModeContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sidebar.css';
+<<<<<<< HEAD
 import waveIcon from './img/wave.png'; 
+=======
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -23,11 +34,17 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''} ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="sidebar-header bg-purple d-flex justify-content-center align-items-center">
+<<<<<<< HEAD
         <img
           src={waveIcon}
           alt="Wave Icon"
           className="cursor-pointer"
           style={{ width: '2rem', marginBottom: '10px' }}
+=======
+        <BsDroplet
+          className="text-white cursor-pointer"
+          style={{ fontSize: '2rem', marginBottom: '10px' }}
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
           onClick={toggleSidebar}
         />
       </div>

@@ -9,8 +9,11 @@ const Agregar = ({ onAddPost }) => {
   });
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+<<<<<<< HEAD
   const [successMessage, setSuccessMessage] = useState('');
   const [imagePreview, setImagePreview] = useState('');
+=======
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -26,6 +29,7 @@ const Agregar = ({ onAddPost }) => {
       ...formData,
       imageFile: file,
     });
+<<<<<<< HEAD
 
     // Preview image
     const reader = new FileReader();
@@ -37,6 +41,8 @@ const Agregar = ({ onAddPost }) => {
     } else {
       setImagePreview('');
     }
+=======
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
   };
 
   const handleSubmit = async (event) => {
@@ -50,14 +56,21 @@ const Agregar = ({ onAddPost }) => {
     setLoading(true);
     try {
       const newPost = await addPost(formData);
+<<<<<<< HEAD
       onAddPost(newPost); // Llamar a la función para agregar la publicación
+=======
+      onAddPost(newPost); 
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
       setFormData({
         description: '',
         imageFile: null,
       });
       setErrorMessage('');
+<<<<<<< HEAD
       setSuccessMessage('¡Publicación subida satisfactoriamente!');
       setImagePreview(''); // Limpiar la previsualización después de publicar
+=======
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
     } catch (error) {
       console.error('Error al agregar la publicación:', error);
       setErrorMessage('Error al agregar la publicación. Inténtalo de nuevo.');
@@ -70,19 +83,31 @@ const Agregar = ({ onAddPost }) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const newPost = {
+<<<<<<< HEAD
           id: Date.now(),
+=======
+          id: Date.now(), 
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
           imageUrl: URL.createObjectURL(postData.imageFile),
           description: postData.description,
         };
         resolve(newPost);
+<<<<<<< HEAD
       }, 1500);
+=======
+      }, 1500); 
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
     });
   };
 
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
+<<<<<<< HEAD
         <div className="col-md-8">
+=======
+        <div className="col-md-6">
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
           <form onSubmit={handleSubmit} className="add-form shadow-sm">
             <h2 className="text-center mb-4">Agregar Nueva Publicación</h2>
 
@@ -101,6 +126,7 @@ const Agregar = ({ onAddPost }) => {
 
             <div className="form-group">
               <label htmlFor="imageUpload">Seleccionar imagen:</label>
+<<<<<<< HEAD
               <label className="custom-file-upload">
                 <input
                   type="file"
@@ -118,6 +144,17 @@ const Agregar = ({ onAddPost }) => {
               </div>
             )}
 
+=======
+              <input
+                type="file"
+                id="imageUpload"
+                className="form-control"
+                accept="image/*"
+                onChange={handleFileChange}
+              />
+            </div>
+
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
             {errorMessage && (
               <div className="alert alert-danger" role="alert">
                 {errorMessage}
@@ -138,6 +175,7 @@ const Agregar = ({ onAddPost }) => {
           </form>
         </div>
       </div>
+<<<<<<< HEAD
       {successMessage && (
         <div className="success-popup">
           <div className="popup-content">
@@ -146,8 +184,19 @@ const Agregar = ({ onAddPost }) => {
           </div>
         </div>
       )}
+=======
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
     </div>
   );
 };
 
 export default Agregar;
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+>>>>>>> 6c93bd4253c4ebe05c896e75ea17174070664c91
