@@ -9,6 +9,8 @@ const Agregar = ({ onAddPost }) => {
   });
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -24,6 +26,17 @@ const Agregar = ({ onAddPost }) => {
       ...formData,
       imageFile: file,
     });
+
+    // Preview image
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImagePreview(reader.result);
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      setImagePreview('');
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -37,12 +50,14 @@ const Agregar = ({ onAddPost }) => {
     setLoading(true);
     try {
       const newPost = await addPost(formData);
-      onAddPost(newPost); 
+      onAddPost(newPost); // Llamar a la función para agregar la publicación
       setFormData({
         description: '',
         imageFile: null,
       });
       setErrorMessage('');
+      setSuccessMessage('¡Publicación subida satisfactoriamente!');
+      setImagePreview(''); // Limpiar la previsualización después de publicar
     } catch (error) {
       console.error('Error al agregar la publicación:', error);
       setErrorMessage('Error al agregar la publicación. Inténtalo de nuevo.');
@@ -55,19 +70,19 @@ const Agregar = ({ onAddPost }) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const newPost = {
-          id: Date.now(), 
+          id: Date.now(),
           imageUrl: URL.createObjectURL(postData.imageFile),
           description: postData.description,
         };
         resolve(newPost);
-      }, 1500); 
+      }, 1500);
     });
   };
 
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
-        <div className="col-md-6">
+        <div className="col-md-8">
           <form onSubmit={handleSubmit} className="add-form shadow-sm">
             <h2 className="text-center mb-4">Agregar Nueva Publicación</h2>
 
@@ -86,14 +101,22 @@ const Agregar = ({ onAddPost }) => {
 
             <div className="form-group">
               <label htmlFor="imageUpload">Seleccionar imagen:</label>
-              <input
-                type="file"
-                id="imageUpload"
-                className="form-control"
-                accept="image/*"
-                onChange={handleFileChange}
-              />
+              <label className="custom-file-upload">
+                <input
+                  type="file"
+                  id="imageUpload"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                />
+                <BiUpload /> Subir imagen
+              </label>
             </div>
+
+            {imagePreview && (
+              <div className="image-preview">
+                <img src={imagePreview} alt="Vista previa de la imagen" />
+              </div>
+            )}
 
             {errorMessage && (
               <div className="alert alert-danger" role="alert">
@@ -115,14 +138,16 @@ const Agregar = ({ onAddPost }) => {
           </form>
         </div>
       </div>
+      {successMessage && (
+        <div className="success-popup">
+          <div className="popup-content">
+            <p>{successMessage}</p>
+            <button onClick={() => setSuccessMessage('')} className="btn btn-purple">Cerrar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Agregar;
-
-
-
-
-
-

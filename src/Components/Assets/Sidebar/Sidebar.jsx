@@ -1,4 +1,3 @@
-// Sidebar.jsx
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineHome, AiOutlineSearch, AiOutlineFileAdd, AiOutlineMessage, AiOutlineUser, AiOutlineSetting } from 'react-icons/ai';

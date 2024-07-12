@@ -1,22 +1,22 @@
 import React from 'react';
 import './Perfil.css';
 import defaultAvatar from './img/img1.jpg';
-import publi from './img/img2.jpg'; 
-import { BiHeart, BiChat, BiShare } from 'react-icons/bi'; 
+import publi from './img/img2.jpg';
+import { BiHeart, BiChat, BiShare } from 'react-icons/bi';
 
 const Perfil = ({ usuario }) => {
   const perfilInfo = {
-    name: 'John Doe',
-    bio: '¡Hola! Soy John, un apasionado por la tecnología y los viajes. Me encanta compartir mis experiencias y aprender nuevas cosas.',
+    name: 'Vitali Olaya',
+    bio: '¡Hola! Soy Josue, un apasionado por la tecnología y los viajes. Me encanta compartir mis experiencias y aprender nuevas cosas.',
     age: 32,
-    location: 'Ciudad de México, México',
-    email: 'johndoe@example.com',
-    phone: '+1234567890',
-    gender: 'Male',
-    followersCount: 5200, 
+    location: 'Barranquilla, Atlántico',
+    email: 'vitaliolaya72@gmail.com',
+    phone: '312 5432497',
+    gender: 'Masculino',
+    followersCount: 5200,
     followingCount: 240,
-    postsCount: 12, 
-    imageUrl: defaultAvatar, 
+    postsCount: 3,
+    imageUrl: defaultAvatar,
   };
 
   const posts = [
@@ -31,7 +31,7 @@ const Perfil = ({ usuario }) => {
 
   const handleComment = (postId) => {
     console.log(`Comentario en la publicación ${postId}`);
-  };
+  };  
 
   const handleShare = (postId) => {
     console.log(`Compartir publicación ${postId}`);
@@ -92,7 +92,4 @@ const Perfil = ({ usuario }) => {
 };
 
 export default Perfil;
-
-
-
 
